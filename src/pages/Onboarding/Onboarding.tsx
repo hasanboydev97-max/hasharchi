@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
+import { ProgressiveImage } from '../../components/ProgressiveImage/ProgressiveImage';
 import imgSearch from '../../assets/kerakli ustani toping.webp';
 import imgDeal from '../../assets/tez kelishib oling.webp';
 import imgShield from '../../assets/ishonchli va havfsiz.webp';
@@ -76,7 +77,7 @@ export const Onboarding = () => {
         <div className={styles.glow2} style={{ backgroundColor: slide.accentColor }} />
 
         <div className={styles.imageBox} key={`img-${current}`}>
-          <img src={slide.image} alt={slide.title} className={styles.slideImage} />
+          <ProgressiveImage src={slide.image} alt={slide.title} className={styles.slideImage} />
         </div>
       </div>
 

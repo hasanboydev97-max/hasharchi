@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import heroImage from '../../assets/xush kelibsiz.webp';
 import { Button } from '../../components/Button/Button';
+import { ProgressiveImage } from '../../components/ProgressiveImage/ProgressiveImage';
 import styles from './Auth.module.css';
 
 export const Welcome: React.FC = () => {
@@ -10,7 +11,7 @@ export const Welcome: React.FC = () => {
   return (
     <div className={styles.pageGradient}>
       <div className={styles.heroImageArea}>
-        <img src={heroImage} alt="Service" className={styles.heroImage} />
+        <ProgressiveImage src={heroImage} alt="Service" className={styles.heroImage} />
       </div>
       
       <div className={styles.welcomeContent}>

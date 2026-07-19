@@ -2,11 +2,11 @@
   position: sticky;
   top: 0;
   z-index: var(--z-raised, 10);
-  height: 56px;
+  height: calc(56px + env(safe-area-inset-top, 0px));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: env(safe-area-inset-top, 0px) 16px 0 16px;
   background-color: var(--color-bg-primary);
   transition: background-color var(--transition-base);
 }

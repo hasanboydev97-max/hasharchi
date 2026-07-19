@@ -124,6 +124,20 @@ body {
   color: var(--color-text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* iOS Native App behaviors */
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+}
+
+input, textarea {
+  user-select: auto;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-wrapper {

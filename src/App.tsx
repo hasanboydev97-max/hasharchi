@@ -33,6 +33,7 @@ import { ProfileSettings }    from './pages/Settings/ProfileSettings';
 import { PaymentSettings }    from './pages/Settings/PaymentSettings';
 import { NotificationsPage }  from './pages/Notifications/Notifications';
 import { HelpPage }           from './pages/Help/Help';
+import { PWAInstallModal }    from './components/PWAInstallModal/PWAInstallModal';
 
 import { useAuth } from './context/AuthContext';
 
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <PWAInstallModal />
       <Routes>
 
         {/* ═══ Splash (hammaga ochiq) ═══ */}
