@@ -56,8 +56,8 @@ function SecretAdminLogin() {
 }
 
 // ─── Wrapper ────────────────────────────────────────────────────
-const W = ({ children }: { children: React.ReactNode }) => (
-  <div className="mobile-wrapper">{children}</div>
+const W = ({ children, noScroll }: { children: React.ReactNode, noScroll?: boolean }) => (
+  <div className={`mobile-wrapper ${noScroll ? 'no-scroll' : ''}`}>{children}</div>
 );
 
 // ─── App ────────────────────────────────────────────────────────
@@ -72,16 +72,16 @@ function App() {
       <Routes>
 
         {/* ═══ Splash (hammaga ochiq) ═══ */}
-        <Route path="/splash" element={<W><Splash /></W>} />
+        <Route path="/splash" element={<W noScroll><Splash /></W>} />
         
         {/* ═══ Maxfiy Admin Kirish yo'li ═══ */}
         <Route path="/secret-admin" element={<SecretAdminLogin />} />
 
         {/* ═══ Onboarding ═══ */}
-        <Route path="/onboarding" element={<W><Onboarding /></W>} />
+        <Route path="/onboarding" element={<W noScroll><Onboarding /></W>} />
 
         {/* ═══ Auth oqimi ═══ */}
-        <Route path="/auth/welcome"  element={<W><Welcome /></W>} />
+        <Route path="/auth/welcome"  element={<W noScroll><Welcome /></W>} />
         <Route path="/auth/role"     element={<W><RoleSelection /></W>} />
         <Route path="/auth/phone"    element={<W><PhoneAuth /></W>} />
         <Route path="/auth/otp"      element={<W><OTPVerify /></W>} />

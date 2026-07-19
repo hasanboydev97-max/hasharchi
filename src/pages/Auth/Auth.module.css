@@ -7,10 +7,11 @@
 }
 
 .pageGradient {
-  min-height: 100dvh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: var(--color-bg-secondary);
+  overflow: hidden;
 }
 
 /* Hero section (Welcome) */

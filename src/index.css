@@ -151,6 +151,10 @@ a, button {
   overflow-y: auto;
 }
 
+.mobile-wrapper.no-scroll {
+  overflow-y: hidden;
+}
+
 button {
   font-family: var(--font-body);
   border: none;
