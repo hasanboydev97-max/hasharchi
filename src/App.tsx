@@ -34,6 +34,8 @@ import { PaymentSettings }    from './pages/Settings/PaymentSettings';
 import { NotificationsPage }  from './pages/Notifications/Notifications';
 import { HelpPage }           from './pages/Help/Help';
 import { PWAInstallModal }    from './components/PWAInstallModal/PWAInstallModal';
+import { ScrollTop }          from './components/ScrollTop/ScrollTop';
+import { RouteManager }       from './components/RouteManager/RouteManager';
 
 import { AdminLayout } from './pages/Admin/AdminLayout/AdminLayout';
 import { AdminDashboard } from './pages/Admin/Dashboard/AdminDashboard';
@@ -64,7 +66,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      <RouteManager />
       <PWAInstallModal />
+      <ScrollTop />
       <Routes>
 
         {/* ═══ Splash (hammaga ochiq) ═══ */}

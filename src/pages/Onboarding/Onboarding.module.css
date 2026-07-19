@@ -1,11 +1,12 @@
 .page {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   height: 100dvh;
-  min-height: -webkit-fill-available;
   background: var(--color-bg-primary);
   position: relative;
-  overflow: hidden;
+  overflow-y: auto; /* Allow scrolling if screen is too small */
+  overflow-x: hidden;
 }
 
 .skipBtn {
@@ -33,7 +34,8 @@
 }
 
 .illustrationArea {
-  flex: 0.6;
+  flex: 1;
+  min-height: 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@
 }
 
 .content {
-  flex: 0.4;
+  flex: none;
   background-color: var(--color-white);
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
