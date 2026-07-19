@@ -6,7 +6,7 @@
 .page {
   position: relative;
   width: 100%;
-  min-height: 100dvh;
+  height: 100%;
   background: linear-gradient(180deg, #E5F6FF 0%, #FFFFFF 100%);
   display: flex;
   flex-direction: column;

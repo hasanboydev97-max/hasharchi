@@ -7,7 +7,7 @@
 }
 
 .pageGradient {
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background: var(--color-bg-secondary);
