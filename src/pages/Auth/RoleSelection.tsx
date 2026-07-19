@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, HardHat, ChevronRight, CheckCircle, Wrench } from 'lucide-react';
+import { Home, HardHat, ChevronRight, CheckCircle } from 'lucide-react';
 import logoUrl from '../../assets/logo-hasharchi.webp';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../../components/Button/Button';

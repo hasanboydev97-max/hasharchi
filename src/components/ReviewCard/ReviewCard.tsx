@@ -24,7 +24,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
   isVerified,
 }) => {
   const [expanded, setExpanded] = useState(false);
-  const maxLines = 3;
 
   const initials = reviewerName
     .split(' ')

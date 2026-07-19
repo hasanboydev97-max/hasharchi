@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { OTPInput } from '../../components/OTPInput/OTPInput';
-import { Button } from '../../components/Button/Button';
 import { useAuth } from '../../context/AuthContext';
 import clsx from 'clsx';
 import authStyles from './Auth.module.css';

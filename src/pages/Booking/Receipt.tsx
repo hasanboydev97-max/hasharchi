@@ -21,7 +21,7 @@ export const Receipt = () => {
   };
 
   return (
-    <MobileLayout title="Chek va To'lov" showBackButton>
+    <MobileLayout>
       <div className={styles.page}>
         
         <div className={styles.successHeader}>
@@ -54,7 +54,7 @@ export const Receipt = () => {
               <span>Ehtiyot qismlar</span>
               <span>25 000 so'm</span>
             </div>
-            <div className={styles.row.muted} style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>
+            <div className={styles.row} style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>
               <span>Platforma xizmat haqi</span>
               <span>5 000 so'm</span>
             </div>

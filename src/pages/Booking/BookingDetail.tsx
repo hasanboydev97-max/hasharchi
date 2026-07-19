@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Phone, Check, Clock, Truck, Hammer, CheckCircle2 } from 'lucide-react';
+import { Phone, Check, Truck, Hammer, CheckCircle2 } from 'lucide-react';
 import { MobileLayout } from '../../components/Layout/MobileLayout';
 import { Button } from '../../components/Button/Button';
 import { useAuth } from '../../context/AuthContext';
@@ -30,27 +30,27 @@ const TIMELINE_STEPS = [
 export const BookingDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { role } = useAuth();
   
   // Real loyihada API dan order ma'lumotlarini id bo'yicha olamiz
   const [order, setOrder] = useState(MOCK_ORDER);
 
   // Faqat Hasharchi holatni o'zgartira oladi (demo uchun taymer qo'yamiz)
   useEffect(() => {
-    if (order.status < 3 && user?.role === 'hasharchi') {
+    if (order.status < 3 && (role as string) === 'hasharchi') {
       const timer = setTimeout(() => {
         setOrder(prev => ({ ...prev, status: prev.status + 1 }));
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [order.status, user?.role]);
+  }, [order.status, role]);
 
   const handleFinish = () => {
     navigate(`/booking/${id}/receipt`);
   };
 
   return (
-    <MobileLayout title="Ish jarayoni" showBackButton>
+    <MobileLayout>
       <div className={styles.page}>
         
         {/* Worker Info */}
@@ -109,7 +109,7 @@ export const BookingDetail = () => {
       )}
       
       {/* Mijoz emas, faqat Hasharchi o'z ishini tugatganda "Tugatish" tugmasini bosishi mumkin (Mock logic) */}
-      {order.status < 3 && user?.role === 'hasharchi' && (
+      {order.status < 3 && (role as string) === 'hasharchi' && (
         <div className={styles.bottomFixed}>
           <Button 
             variant="primary" 

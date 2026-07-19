@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import clsx from 'clsx';
 import { Info, AlertTriangle } from 'lucide-react';
 import { Button } from '../Button/Button';
-import { Typography } from '../Typography/Typography';
 import styles from './ConfirmModal.module.css';
 
 export interface ConfirmModalProps {

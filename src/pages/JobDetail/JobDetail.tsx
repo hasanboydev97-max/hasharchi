@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { MapPin, Calendar, Clock, Wallet, ChevronLeft } from 'lucide-react';
 import { Typography } from '../../components/Typography/Typography';
@@ -38,7 +38,6 @@ const MOCK_JOB = {
 };
 
 export const JobDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [job] = useState(MOCK_JOB); // Normally we fetch job by id here
 

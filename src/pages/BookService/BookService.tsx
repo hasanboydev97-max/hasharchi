@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MapPin, Clock, CheckCircle, Calendar, MoreVertical } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, Calendar, MoreVertical } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useData } from '../../context/DataContext';
 import { Button } from '../../components/Button/Button';
@@ -49,7 +49,7 @@ export const BookService = () => {
   const [dates] = useState<DateObj[]>(getDates());
   const [selectedDate, setSelectedDate] = useState<DateObj | null>(dates[0]);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
-  const [address, setAddress] = useState('Toshkent, Yunusobod tumani');
+  const [address] = useState('Toshkent, Yunusobod tumani');
   const [comment, setComment] = useState('');
 
   const handleBook = () => {
@@ -70,7 +70,7 @@ export const BookService = () => {
 
       <main className={styles.main}>
         <div className={styles.workerCard}>
-          <img src={worker.imageUrl || `https://ui-avatars.com/api/?name=${worker.name}`} alt={worker.name} className={styles.avatar} />
+          <img src={(worker as any).imageUrl || `https://ui-avatars.com/api/?name=${worker.name}`} alt={worker.name} className={styles.avatar} />
           <div className={styles.workerInfo}>
             <h2 className={styles.workerName}>{worker.name}</h2>
             <p className={styles.workerCategory}>{worker.category}</p>

@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { ArrowLeft } from 'lucide-react';
-import { Typography } from '../Typography/Typography';
 import styles from './PageHeader.module.css';
 
 export interface PageHeaderProps {

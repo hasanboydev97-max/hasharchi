@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
-import { MapPin, Calendar, Clock, ChevronRight, Briefcase } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Calendar, ChevronRight, Briefcase } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { useData } from '../../context/DataContext';
 import { EmptyState } from '../../components/EmptyState/EmptyState';
 import styles from './Orders.module.css';
 
 type TabType = 'barchasi' | 'faol' | 'yakunlangan' | 'bekor';
 
 export const Orders = () => {
-  const { orders } = useData();
   const [activeTab, setActiveTab] = useState<TabType>('barchasi');
   const navigate = useNavigate();
 
-  // fallback data if empty
-  const ordersData = orders?.length ? orders : [
+  const ordersData = [
     { id: '1', title: 'Oshxona kranini almashtirish', worker: { category: 'Santexnik' }, status: 'pending', address: 'Toshkent, Yunusobod', date: 'Bugun', time: '14:00', price: 'Kelishilgan' },
     { id: '2', title: 'Muzlatgich tuzatish', worker: { category: 'Ustalar' }, status: 'completed', address: 'Toshkent, Chilonzor', date: 'Kecha', time: '10:00', price: '150 000 so\'m' }
   ];
@@ -68,7 +65,7 @@ export const Orders = () => {
           <EmptyState
             icon={<Briefcase size={48} />}
             title="Buyurtmalar yo'q"
-            description={`Hozircha ${activeTab !== 'barchasi' ? activeTab + ' ' : ''}buyurtmalar mavjud emas.`}
+            subtitle={`Hozircha ${activeTab !== 'barchasi' ? activeTab + ' ' : ''}buyurtmalar mavjud emas.`}
           />
         ) : (
           <div className={styles.orderList}>

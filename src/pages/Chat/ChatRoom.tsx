@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Phone, Send, Paperclip, Smile, MoreVertical } from 'lucide-react';
 import { clsx } from 'clsx';
-import { useData } from '../../context/DataContext';
 import styles from './ChatRoom.module.css';
 
 interface Message {
@@ -13,7 +12,6 @@ interface Message {
 }
 
 export const ChatRoom = () => {
-  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   // using mock data
   const [messages, setMessages] = useState<Message[]>([

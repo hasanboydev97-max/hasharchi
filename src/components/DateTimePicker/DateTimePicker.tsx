@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Calendar as CalendarIcon, Clock } from 'lucide-react';
 import styles from './DateTimePicker.module.css';
 import clsx from 'clsx';

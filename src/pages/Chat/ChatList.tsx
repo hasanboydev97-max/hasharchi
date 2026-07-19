@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Search, MessageSquare } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { useData } from '../../context/DataContext';
 import { EmptyState } from '../../components/EmptyState/EmptyState';
 import styles from './ChatList.module.css';
 
@@ -19,7 +18,7 @@ interface Chat {
 export const ChatList = () => {
   const navigate = useNavigate();
   // Using mock data for UI
-  const [chats, setChats] = useState<Chat[]>([
+  const [chats] = useState<Chat[]>([
     { id: '1', name: 'Bahriddin Usta', lastMessage: 'Salom, kelaman...', time: '10:42', unread: 2, isOnline: true },
     { id: '2', name: 'Alisher Akfa', lastMessage: 'Rahmat!', time: 'Kecha', unread: 0, isOnline: false }
   ]);
@@ -48,7 +47,7 @@ export const ChatList = () => {
           <EmptyState
             icon={<MessageSquare size={48} />}
             title="Xabarlar yo'q"
-            description="Hozircha hech qanday suhbat mavjud emas"
+            subtitle="Hozircha hech qanday suhbat mavjud emas"
           />
         ) : (
           <div className={styles.chatList}>
