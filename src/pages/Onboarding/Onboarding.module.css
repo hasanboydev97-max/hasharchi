@@ -1,12 +1,10 @@
 .page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   height: 100dvh;
   background: var(--color-bg-primary);
   position: relative;
-  overflow-y: auto; /* Allow scrolling if screen is too small */
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .skipBtn {
@@ -35,7 +33,6 @@
 
 .illustrationArea {
   flex: 1;
-  min-height: 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -95,7 +92,7 @@
 }
 
 .content {
-  flex: none;
+  flex-shrink: 0;
   background-color: var(--color-white);
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
@@ -136,6 +133,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 32px;
   animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
