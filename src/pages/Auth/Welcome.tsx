@@ -16,7 +16,7 @@ export const Welcome: React.FC = () => {
       
       <div className={styles.welcomeContent}>
         <h2 className={styles.title} style={{ marginBottom: '12px' }}>Xush kelibsiz!</h2>
-        <p className={styles.subtitle} style={{ marginBottom: '32px' }}>
+        <p className={styles.subtitle} style={{ marginBottom: '40px' }}>
           Uy, ofis va biznesingiz uchun eng yaxshi mutaxassislarni toping yoki o'z xizmatlaringizni taklif qiling.
         </p>
         
