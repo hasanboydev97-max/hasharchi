@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
-import imgSearch from '../../assets/kerakli ustani toping.png';
-import imgDeal from '../../assets/tez kelishib oling.png';
-import imgShield from '../../assets/ishonchli va havfsiz.png';
+import imgSearch from '../../assets/kerakli ustani toping.webp';
+import imgDeal from '../../assets/tez kelishib oling.webp';
+import imgShield from '../../assets/ishonchli va havfsiz.webp';
 import styles from './Onboarding.module.css';
 
 interface Slide {

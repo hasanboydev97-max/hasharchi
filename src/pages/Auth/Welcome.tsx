@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../../assets/xush kelibsiz.png';
+import heroImage from '../../assets/xush kelibsiz.webp';
 import { Button } from '../../components/Button/Button';
 import styles from './Auth.module.css';
 
