@@ -29,10 +29,10 @@ interface DataContextType {
 }
 
 const INITIAL_WORKERS: Worker[] = [
-  { id: '1', name: 'Bahriddin Usta', category: 'Santexnika', price: '50,000 so\'m', rating: 4.8, reviews: 120, image: 'https://i.pravatar.cc/150?u=1' },
-  { id: '2', name: 'Alisher Akfa', category: 'Ta\'mirlash', price: '80,000 so\'m', rating: 4.9, reviews: 85, image: 'https://i.pravatar.cc/150?u=2' },
-  { id: '3', name: 'Jamshid Elektrik', category: 'Elektrika', price: '100,000 so\'m', rating: 4.7, reviews: 200, image: 'https://i.pravatar.cc/150?u=3' },
-  { id: '4', name: 'Qodir Bo\'yoqchi', category: 'Ta\'mirlash', price: '40,000 so\'m', rating: 4.5, reviews: 50, image: 'https://i.pravatar.cc/150?u=4' },
+  { id: '1', name: 'Bahriddin Usta', category: 'Santexnika', price: '50,000 so\'m', rating: 4.8, reviews: 120, image: 'https://randomuser.me/api/portraits/men/32.jpg' },
+  { id: '2', name: 'Alisher Akfa', category: 'Ta\'mirlash', price: '80,000 so\'m', rating: 4.9, reviews: 85, image: 'https://randomuser.me/api/portraits/men/44.jpg' },
+  { id: '3', name: 'Jamshid Elektrik', category: 'Elektrika', price: '100,000 so\'m', rating: 4.7, reviews: 200, image: 'https://randomuser.me/api/portraits/men/22.jpg' },
+  { id: '4', name: 'Qodir Bo\'yoqchi', category: 'Ta\'mirlash', price: '40,000 so\'m', rating: 4.5, reviews: 50, image: 'https://randomuser.me/api/portraits/men/55.jpg' },
 ];
 
 const INITIAL_JOBS: Job[] = [

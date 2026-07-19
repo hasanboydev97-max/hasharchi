@@ -13,7 +13,7 @@ const MOCK_ORDER = {
     name: 'Alisher Qodirov',
     role: 'Santexnik',
     phone: '+998 90 123 45 67',
-    avatar: 'https://i.pravatar.cc/150?u=alisher',
+    avatar: 'https://randomuser.me/api/portraits/men/44.jpg',
   },
   address: 'Yunusobod tumani, 4-mavze, 12-uy',
   service: 'Quvurlarni almashtirish',
