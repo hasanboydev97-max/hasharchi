@@ -1,0 +1,394 @@
+/* ═══════════════════════════════════════════
+   MyProfile — Mening profilim
+═══════════════════════════════════════════ */
+
+.page {
+  min-height: 100dvh;
+  background: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px var(--spacing-4) 40px;
+  overflow: hidden;
+}
+
+.heroGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #E5F6FF 0%, #FFFFFF 100%);
+  z-index: 0;
+}
+
+/* ─── Avatar ─── */
+.avatarWrap {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--spacing-4);
+}
+
+.avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border: 4px solid var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-white);
+  box-shadow: 0 12px 32px rgba(0, 114, 255, 0.25);
+  transition: var(--transition-base);
+}
+
+.editAvatar {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.editAvatar:hover { transform: scale(1.1); }
+
+.verifyBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #F59E0B;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Hero text ─── */
+.heroName {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+}
+
+.heroRole {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--spacing-4);
+}
+
+.workerTag, .clientTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.workerTag {
+  background: rgba(0, 163, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 163, 255, 0.2);
+}
+
+.clientTag {
+  background: rgba(0, 163, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 163, 255, 0.2);
+}
+
+/* ─── Stats ─── */
+.statsRow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-3) var(--spacing-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.statNum {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.statLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.statDivider {
+  width: 1px;
+  height: 28px;
+  background: var(--color-border-subtle);
+}
+
+/* ─── Kontent ─── */
+.content {
+  flex: 1;
+  padding: 0 var(--spacing-4) var(--spacing-5);
+  margin-top: -24px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+/* ─── Wallet card ─── */
+.walletCard {
+  background: var(--color-action-gradient-dark);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  box-shadow: 0 8px 24px rgba(0, 163, 255, 0.3);
+}
+
+.walletTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.walletLabel {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.walletAmount {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+}
+
+.walletAmount span {
+  font-size: var(--text-base);
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.walletIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.topupBtn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition-fast);
+}
+
+.topupBtn:hover { background: rgba(255, 255, 255, 0.3); }
+
+/* ─── Rating card ─── */
+.ratingCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-primary-100);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.ratingCard:hover { border-color: var(--color-primary); }
+
+.ratingIcon {
+  color: var(--color-warning);
+  flex-shrink: 0;
+}
+
+.ratingLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.ratingValue {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.ratingValue span {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.ratingArrow {
+  margin-left: auto;
+  color: var(--color-text-soft);
+  flex-shrink: 0;
+}
+
+/* ─── Menu section ─── */
+.menuSection {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--color-border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4) var(--spacing-4);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  cursor: pointer;
+  font-family: var(--font-body);
+  text-align: left;
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.menuItem:last-child { border-bottom: none; }
+
+.menuItem:hover { background: var(--color-primary-50); }
+.menuItem:active { transform: scale(0.99); }
+
+.menuLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.menuIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--color-bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.menuLabel {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-body);
+}
+
+.menuRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menuBadge {
+  min-width: 20px;
+  height: 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-action-gradient);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+.menuArrow { color: var(--color-text-soft); }
+
+/* ─── Logout ─── */
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  width: 100%;
+  padding: var(--spacing-4);
+  background: #FEF2F2;
+  border: 1.5px solid #FECACA;
+  border-radius: var(--radius-card);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-danger);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.logoutBtn:hover { background: #FEE2E2; }
+.logoutBtn:active { transform: scale(0.99); }
+
+/* ─── Version ─── */
+.versionText {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-soft);
+  margin: var(--spacing-2) 0 0;
+}

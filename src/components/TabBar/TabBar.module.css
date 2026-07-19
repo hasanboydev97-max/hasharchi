@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.container.underline {
+  border-bottom: 1px solid var(--color-border-subtle);
+  gap: 0;
+}
+
+.container.pill {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 4px;
+  box-shadow: inset 0 0 0 1px var(--color-border-subtle);
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-base);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container.pill .tab {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+
+.tab.active {
+  color: var(--color-primary);
+}
+
+.container.pill .tab.active {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-xs);
+}
+
+.indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px 2px 0 0;
+  transform-origin: center;
+  animation: slideIn 0.2s ease-out;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-dark);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  min-width: 18px;
+}
+
+.tab.active .badge {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0.5;
+    transform: scaleX(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

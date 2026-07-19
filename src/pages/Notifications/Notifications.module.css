@@ -1,0 +1,136 @@
+.page {
+  min-height: 100dvh;
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.backBtn {
+  position: absolute;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-main);
+  transition: var(--transition-fast);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dateGroup {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 8px 0 4px;
+}
+
+.notificationCard {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  background: var(--color-white);
+  padding: 16px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.notificationCard.unread {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-100);
+}
+
+.unreadDot {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconBlue {
+  background: rgba(0, 163, 255, 0.1);
+  color: var(--color-primary);
+}
+
+.iconGreen {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.iconOrange {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notifTitle {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  padding-right: 12px;
+}
+
+.notifBody {
+  font-size: 13px;
+  color: var(--color-text-body);
+  line-height: 1.4;
+}
+
+.notifTime {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: 4px;
+}

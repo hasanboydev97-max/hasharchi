@@ -1,0 +1,65 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.starWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.starWrapper.interactive {
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.starWrapper.interactive:hover {
+  transform: scale(1.1);
+}
+
+.starEmpty {
+  color: var(--color-text-soft);
+  fill: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.starFilledWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.starFilled {
+  color: var(--color-warning);
+  fill: var(--color-warning);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.valueText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-left: 2px;
+}
+
+.reviewCount {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}

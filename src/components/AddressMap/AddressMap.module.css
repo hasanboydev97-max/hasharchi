@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.mapBox {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border-subtle);
+}
+
+.mapImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.2) contrast(1.1);
+}
+
+.mapOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin {
+  width: 44px;
+  height: 44px;
+  background: var(--color-action-gradient);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-button);
+  position: relative;
+  z-index: 2;
+}
+
+.pin > * {
+  transform: rotate(45deg);
+}
+
+.mapPulse {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  z-index: 1;
+  bottom: -10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  color: var(--color-primary);
+}
+
+.input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px 0 44px;
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-input);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-main);
+  transition: var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.1);
+}
+
+.input::placeholder {
+  color: var(--color-text-soft);
+}

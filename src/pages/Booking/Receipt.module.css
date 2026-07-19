@@ -1,0 +1,217 @@
+.page {
+  padding: var(--spacing-6);
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  background-color: var(--color-bg-secondary);
+  min-height: 100dvh;
+}
+
+.successHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  margin-top: var(--spacing-4);
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-primary-50);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.successTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 4px;
+}
+
+.successSubtitle {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* Receipt Card with Perforation */
+.receiptCard {
+  background: var(--color-white);
+  border-radius: var(--radius-card-md);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--spacing-8);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
+}
+
+/* Zig-zag top and bottom (perforation effect) */
+.receiptCard::before,
+.receiptCard::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background-size: 24px 12px;
+}
+
+.receiptCard::before {
+  top: -6px;
+  background-image: radial-gradient(circle at 12px 0, transparent 12px, var(--color-white) 13px);
+}
+
+.receiptCard::after {
+  bottom: -6px;
+  background-image: radial-gradient(circle at 12px 12px, transparent 12px, var(--color-white) 13px);
+}
+
+.receiptContent {
+  padding: var(--spacing-6);
+}
+
+.receiptHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-6);
+  border-bottom: 1px dashed var(--color-border-subtle);
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.5px;
+}
+
+.date {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.orderId {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  font-family: monospace;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-4);
+  font-size: 15px;
+  color: var(--color-text-main);
+}
+
+.row.muted {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.row.total {
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px dashed var(--color-border-subtle);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 0;
+}
+
+.bottomFixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-4) var(--spacing-6) calc(var(--spacing-4) + env(safe-area-inset-bottom, 0px));
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border-subtle);
+  z-index: 100;
+}
+
+/* Modal Rating */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bottomSheet {
+  background: var(--color-white);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px 24px 0 0;
+  padding: var(--spacing-6);
+  padding-bottom: calc(var(--spacing-6) + env(safe-area-inset-bottom, 0px));
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.sheetTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.stars {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.starBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-border-subtle);
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.starBtn:active {
+  transform: scale(0.9);
+}
+
+.starActive {
+  color: #F59E0B;
+}
+
+.commentInput {
+  width: 100%;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-sm);
+  padding: var(--spacing-4);
+  font-family: inherit;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: var(--spacing-6);
+}
+
+.commentInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}

@@ -1,0 +1,265 @@
+/* ═══════════════════════════════════════════
+   SearchPage — Qidiruv sahifasi
+═══════════════════════════════════════════ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--color-bg-primary);
+}
+
+/* ─── Search bar ─── */
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4) var(--spacing-4) var(--spacing-3);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-raised);
+}
+
+.backBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-tertiary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.backBtn:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+.searchBar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: var(--color-bg-primary);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-input);
+  padding: 0 var(--spacing-3);
+  height: 48px;
+  transition: var(--transition-fast);
+}
+
+.searchBarFocused {
+  border-color: var(--color-primary);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.1);
+}
+
+.searchIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-main);
+  min-width: 0;
+}
+
+.searchInput::placeholder { color: var(--color-text-soft); }
+.searchInput::-webkit-search-cancel-button { display: none; }
+
+.clearBtn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-text-soft);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.clearBtn:hover { background: var(--color-text-muted); }
+
+/* ─── Kontent ─── */
+.content {
+  flex: 1;
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+/* ─── Section ─── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.clearAllBtn {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-danger);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: var(--transition-fast);
+}
+
+.clearAllBtn:hover { opacity: 0.75; }
+
+.countBadge {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-primary-50);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Recent chips ─── */
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.recentChip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-fast);
+}
+
+.recentChip:hover {
+  border-color: var(--color-primary-200);
+}
+
+.recentLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px 8px 10px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-body);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chipClock { color: var(--color-text-soft); }
+
+.removeChip {
+  padding: 8px 10px 8px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-soft);
+  display: flex;
+  align-items: center;
+  transition: var(--transition-fast);
+}
+
+.removeChip:hover { color: var(--color-danger); }
+
+/* ─── Trend list ─── */
+.trendList {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--color-border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.trendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.trendItem:last-child { border-bottom: none; }
+
+.trendItem:hover {
+  background: var(--color-primary-50);
+}
+
+.trendItem:active { transform: scale(0.99); }
+
+.trendNum {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--color-primary);
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.trendLabel {
+  flex: 1;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-body);
+}
+
+.trendArrow {
+  color: var(--color-text-soft);
+  flex-shrink: 0;
+}
+
+/* ─── Results list ─── */
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}

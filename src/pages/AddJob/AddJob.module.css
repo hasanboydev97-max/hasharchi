@@ -1,0 +1,228 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.progressContainer {
+  height: 4px;
+  background-color: var(--color-primary-50);
+  width: 100%;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width var(--transition-smooth);
+}
+
+.content {
+  flex: 1;
+  padding: var(--spacing-6) var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  animation: fadeIn var(--transition-smooth);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fadeIn {
+  animation: fadeIn var(--transition-fast);
+}
+
+.stepTitle {
+  margin-bottom: var(--spacing-6) !important;
+  color: var(--color-text-main);
+  font-family: var(--font-heading);
+}
+
+/* Step 1: Categories */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.categoryCard {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-6) var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.categoryCard:active {
+  transform: scale(0.98);
+}
+
+.categoryCard.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-50);
+}
+
+.categoryIcon {
+  color: var(--color-primary);
+}
+
+.categoryLabel {
+  font-weight: 600;
+  color: var(--color-text-main);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+/* Step 2: Textarea */
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-input);
+  padding: var(--spacing-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-main);
+  resize: vertical;
+  background-color: var(--color-bg-secondary);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* Step 3 & 4: Radios */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+}
+
+.radioRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+}
+
+.radioCard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-4);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  background-color: var(--color-bg-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.radioCard.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-50);
+}
+
+.radioChip {
+  padding: var(--spacing-3) var(--spacing-5);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.radioChip.selectedChip {
+  background: var(--color-action-gradient);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.label {
+  margin-bottom: var(--spacing-3) !important;
+  display: block;
+}
+
+/* Step 5: Select & Input */
+.select {
+  width: 100%;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-input);
+  padding: var(--spacing-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-secondary);
+  outline: none;
+  margin-bottom: var(--spacing-4);
+  appearance: none;
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+}
+
+/* Step 6: Summary */
+.summaryCard {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--spacing-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.summaryRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.summaryLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.summaryValue {
+  color: var(--color-text-main);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-align: right;
+  max-width: 60%;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: var(--spacing-6);
+}

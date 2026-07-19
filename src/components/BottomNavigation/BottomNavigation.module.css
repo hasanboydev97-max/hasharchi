@@ -1,0 +1,84 @@
+.navWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--spacing-4) var(--spacing-6);
+  padding-bottom: calc(var(--spacing-6) + env(safe-area-inset-bottom, 0px));
+  z-index: 100;
+  pointer-events: none;
+}
+
+.nav {
+  pointer-events: auto;
+  background-color: var(--color-white);
+  height: 72px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-floating);
+  padding: 0 var(--spacing-2);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active {
+  background: var(--color-action-gradient);
+  color: var(--color-white);
+  box-shadow: var(--shadow-button);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLabel {
+  display: none;
+}
+
+.active .navLabel {
+  display: block;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.addBtnInner {
+  width: 52px;
+  height: 52px;
+  background: var(--color-action-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-button);
+  transition: transform 0.2s;
+}
+
+.addBtn:active .addBtnInner {
+  transform: scale(0.9);
+}

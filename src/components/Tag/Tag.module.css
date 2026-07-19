@@ -1,0 +1,26 @@
+.tag {
+  border-radius: var(--radius-pill);
+  padding: var(--spacing-2) var(--spacing-4);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--color-border-subtle);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tag:hover:not(:disabled) {
+  border-color: var(--color-text-muted);
+}
+
+.active {
+  background-color: var(--color-text-main);
+  color: var(--color-white);
+  border-color: var(--color-text-main);
+}
+
+.active:hover:not(:disabled) {
+  border-color: var(--color-text-main);
+}

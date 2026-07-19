@@ -1,0 +1,316 @@
+/* ═══════════════════════════════════════════
+   Explore — Hasharchi Bosh Sahifasi
+   Emerald Tepa palette asosida
+═══════════════════════════════════════════ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  padding: var(--spacing-5) var(--spacing-4);
+  padding-bottom: 120px;
+  background: var(--color-bg-primary);
+  min-height: 100dvh;
+}
+
+/* ═══ HEADER ═══ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-2);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+/* Avatar — Hasharchi monogramma */
+.avatarBox {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--color-action-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-button);
+  flex-shrink: 0;
+}
+
+.avatarLetter {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.greetBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.greetMain {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.greetSub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Bell tugma */
+.bellBtn {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.08);
+}
+
+.bellBtn:hover {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-200);
+  color: var(--color-primary);
+}
+
+.bellBtn:active {
+  transform: scale(0.92);
+}
+
+.bellDot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-danger);
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+
+/* ═══ QIDIRUV ═══ */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--radius-input);
+  padding: 0 var(--spacing-4);
+  height: 54px;
+  box-shadow: 0 8px 24px rgba(0, 114, 255, 0.06);
+  transition: var(--transition-fast);
+}
+
+.searchBar:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.12), var(--shadow-sm);
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-main);
+  min-width: 0;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-soft);
+  font-weight: 400;
+}
+
+.clearBtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border: none;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.clearBtn:hover {
+  background: var(--color-border-subtle);
+  color: var(--color-text-main);
+}
+
+/* ═══ PROMO SWIPER ═══ */
+.promoWrap {
+  margin: 0 calc(var(--spacing-4) * -1);
+}
+
+.realSwiper {
+  padding: 0 var(--spacing-4) 32px var(--spacing-4) !important;
+}
+
+.realSwiper :global(.swiper-pagination-bullet) {
+  background: var(--color-text-muted);
+  opacity: 0.3;
+}
+
+.realSwiper :global(.swiper-pagination-bullet-active) {
+  background: var(--color-primary);
+  opacity: 1;
+}
+
+.realSwiper :global(.swiper-pagination) {
+  bottom: 0px !important;
+}
+
+/* ═══ KATEGORIYALAR — horizontal scroll ═══ */
+.sectionBlock {
+  /* Negative margin orqali chip'lar ekran chetiga chiqadi */
+  margin: 0 calc(var(--spacing-4) * -1);
+}
+
+.sectionScroll {
+  display: flex;
+  gap: var(--spacing-2);
+  overflow-x: auto;
+  padding: var(--spacing-1) var(--spacing-4);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sectionScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ═══ SECTION ═══ */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.viewAllBtn {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 4px 0;
+  transition: var(--transition-fast);
+}
+
+.viewAllBtn:hover {
+  opacity: 0.75;
+}
+
+.countBadge {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-primary-50);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* ═══ HORIZONTAL SCROLL — vertical cards ═══ */
+.horizontalScroll {
+  display: flex;
+  gap: var(--spacing-3);
+  overflow-x: auto;
+  padding: var(--spacing-2) 0 var(--spacing-3);
+  margin: 0 calc(var(--spacing-4) * -1);
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+  scrollbar-width: none;
+}
+
+.horizontalScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ═══ WORKER LIST — horizontal cards ═══ */
+.workerList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+/* ═══ EMPTY STATE ═══ */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-10) var(--spacing-4);
+  gap: var(--spacing-2);
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  border: 1.5px dashed var(--color-border-subtle);
+}
+
+.emptyIcon {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.emptyTitle {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.emptySub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  text-align: center;
+}

@@ -1,0 +1,117 @@
+/* ═══════════════════════════════════════════
+   CategoriesPage — Kasblar grid
+═══════════════════════════════════════════ */
+
+.page {
+  min-height: 100dvh;
+  background: var(--color-bg-primary);
+  padding: var(--spacing-5) var(--spacing-4) 120px;
+}
+
+/* ─── Header ─── */
+.header {
+  margin-bottom: var(--spacing-6);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ─── Grid ─── */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+/* ─── Category card ─── */
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-4);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  transition: var(--transition-base);
+  width: 100%;
+}
+
+.card:hover {
+  border-color: var(--color-primary-200);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(3px);
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+/* ─── Icon ─── */
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Body ─── */
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.cardLabel {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Right ─── */
+.cardRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  flex-shrink: 0;
+}
+
+.count {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.arrow {
+  color: var(--color-text-soft);
+}

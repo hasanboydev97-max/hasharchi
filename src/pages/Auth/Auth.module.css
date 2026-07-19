@@ -1,0 +1,307 @@
+/* Container variants */
+.page {
+  min-height: 100dvh;
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+.pageGradient {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-secondary);
+}
+
+/* Hero section (Welcome) */
+.heroImageArea {
+  flex: 1; /* Rasm imkon qadar ko'p joyni egallaydi */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 20%, rgba(0, 163, 255, 0.3) 50%, var(--color-primary) 100%);
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  color: white;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  letter-spacing: -0.5px;
+}
+
+.heroSubtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.welcomeContent {
+  flex: none; /* Faqat ichidagi kontentga qarab o'lcham oladi (ixcham) */
+  background-color: var(--color-white);
+  border-radius: 40px 40px 0 0;
+  margin-top: -30px;
+  padding: 40px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 -24px 48px rgba(0, 114, 255, 0.15); /* Kuchliroq premium soya */
+  z-index: 10;
+  position: relative;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: var(--spacing-8);
+}
+
+.headerCenter {
+  margin-bottom: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-2);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+/* Form elements */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  flex: 1;
+}
+
+.phoneRow {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: stretch;
+}
+
+.prefix {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: 0 var(--spacing-4);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-input);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.inputWrapper {
+  flex: 1;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: var(--spacing-4);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-input);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-main);
+  outline: none;
+  transition: var(--transition-base);
+}
+
+.inputWrapper input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-100);
+}
+
+.termsRow {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.termsRow a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Role cards */
+.roleGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  flex: 1;
+}
+
+.roleCard {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: var(--transition-base);
+  gap: var(--spacing-4);
+}
+
+.roleCard:active {
+  transform: scale(0.98);
+}
+
+.roleCard.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-50);
+}
+
+.roleIconBox {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.roleIconBox.client {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+.roleIconBox.worker {
+  background-color: #FEF3C7; /* amber-50 */
+  color: #D97706; /* amber-600 */
+}
+
+.roleContent {
+  flex: 1;
+}
+
+.roleTitle {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-1);
+}
+
+.roleSubtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.roleCheck {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.roleArrow {
+  color: var(--color-text-soft);
+  flex-shrink: 0;
+}
+
+/* Actions */
+.actions {
+  padding: var(--spacing-4) var(--spacing-6) calc(var(--spacing-6) + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-top: auto;
+}
+
+/* Additional elements */
+.backBtn {
+  position: absolute;
+  top: var(--spacing-6);
+  left: var(--spacing-6);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-main);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.backBtn:active {
+  background-color: var(--color-bg-primary);
+}
+
+.logoMini {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-4);
+}
+
+.centerIcon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-primary-50);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-6);
+}

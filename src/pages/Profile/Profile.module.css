@@ -1,0 +1,459 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
+}
+
+.notFound {
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  height: 100vh;
+}
+
+.backBtn {
+  margin-top: 16px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+
+.headerTitle {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.iconBtn {
+  background: var(--color-white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.08);
+}
+
+.iconBtn:active {
+  transform: scale(0.95);
+}
+
+.heroGradient {
+  height: 28dvh; /* Katta bo'shliq o'rniga ixchamroq, senior-level o'lcham */
+  background: linear-gradient(180deg, #E5F6FF 0%, #FFFFFF 100%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.avatarWrapper {
+  transform: translateY(30px);
+  z-index: 2;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-white);
+  box-shadow: var(--shadow-md);
+  background: var(--color-bg-secondary);
+}
+
+.avatarFallback {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--color-action-gradient);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  border: 4px solid var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.bottomSheet {
+  background: var(--color-bg-secondary);
+  border-radius: 32px 32px 0 0;
+  flex: 1;
+  margin-top: -30px;
+  z-index: 1;
+  padding: 64px 24px 100px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheetHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryBadge {
+  background: var(--color-primary-50);
+  color: var(--color-primary-dark);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.price small {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.workerInfoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.workerMain {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.workerName {
+  color: var(--color-text-main);
+  font-weight: 700;
+}
+
+.verifiedRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verifiedIcon {
+  color: var(--color-primary);
+}
+
+.verifiedText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.actionBtns {
+  display: flex;
+  gap: 12px;
+}
+
+.circleBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.circleBtn:active {
+  transform: scale(0.95);
+}
+
+.callBtn {
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+.msgBtn {
+  background: var(--color-action-gradient);
+  color: var(--color-white);
+}
+
+.ratingRow {
+  margin-top: 4px;
+}
+
+.tabsWrapper {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.tabContent {
+  flex: 1;
+}
+
+/* About Tab */
+.aboutTab {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bio {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.statCard {
+  background: var(--color-primary-50);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.statIcon {
+  color: var(--color-primary);
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text-main);
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  color: var(--color-text-main);
+  font-weight: 700;
+}
+
+.skillsScroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.skillsScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.skillChip {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-main);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.scheduleCard {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scheduleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.scheduleIcon {
+  color: var(--color-primary);
+}
+
+.time {
+  margin-left: auto;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* Portfolio Tab */
+.portfolioTab {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.portfolioImg {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+}
+
+/* Reviews Tab */
+.reviewsTab {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ratingSummary {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.ratingBig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingBigValue {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1;
+}
+
+.ratingBigCount {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.ratingBars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ratingBarRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.barLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 24px;
+}
+
+.barTrack {
+  flex: 1;
+  height: 6px;
+  background: var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--color-warning);
+  border-radius: var(--radius-pill);
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Sticky Bottom */
+.stickyBottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  padding: 16px 24px 24px 24px;
+  background: linear-gradient(to top, var(--color-bg-secondary) 80%, rgba(255,255,255,0) 100%);
+  z-index: 10;
+}

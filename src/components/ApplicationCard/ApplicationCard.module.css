@@ -1,0 +1,87 @@
+.card {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+  transition: var(--transition-base);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.avatarFallback {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+
+.avatarImage {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+}
+
+.userInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: var(--color-text-main);
+  font-weight: 600;
+  font-size: var(--text-base);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  color: var(--color-warning);
+  font-size: var(--text-sm);
+  margin-top: 2px;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--text-md);
+}
+
+.message {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-1);
+}
+
+.btnAccept {
+  flex: 1;
+}
+
+.btnReject {
+  flex: 1;
+}

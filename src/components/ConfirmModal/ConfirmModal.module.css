@@ -1,0 +1,100 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal, 100);
+  padding: 16px;
+  animation: fadeIn 250ms ease-out;
+}
+
+.modal {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-card-lg);
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-floating, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  animation: modalEnter 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.iconContainer {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-primary-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.iconDanger {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.iconColorDefault {
+  color: var(--color-primary);
+}
+
+.iconColorDanger {
+  color: var(--color-danger);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text-main);
+  margin: 0 0 8px 0;
+}
+
+.message {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+}
+
+.actionItem {
+  flex: 1;
+}
+
+/* danger button overrides need to be handled via clsx if Button component supports it, 
+   but we can also use CSS variables if it's based on them. 
+   Assuming Button takes primary/secondary and custom class. */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
