@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Share, PlusSquare, Download } from 'lucide-react';
-import { Button } from '../Button/Button';
+import { X, Share, PlusSquare } from 'lucide-react';
 import logoUrl from '../../assets/logo-hasharchi.webp';
 import styles from './PWAInstallModal.module.css';
 
@@ -13,6 +12,7 @@ export const PWAInstallModal = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [showIosGuide, setShowIosGuide] = useState(false);
 
   useEffect(() => {
     // Check if already installed
@@ -52,7 +52,12 @@ export const PWAInstallModal = () => {
     };
   }, []);
 
-  const handleInstall = async () => {
+  const handleInstallClick = async () => {
+    if (isIOS) {
+      setShowIosGuide(true);
+      return;
+    }
+
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
@@ -66,28 +71,24 @@ export const PWAInstallModal = () => {
   const handleDismiss = () => {
     localStorage.setItem('pwa_install_dismissed', Date.now().toString());
     setShowModal(false);
+    setShowIosGuide(false);
   };
 
   if (!showModal) return null;
 
-  return (
-    <div className={styles.overlay} onClick={handleDismiss}>
-      <div className={styles.modal} onClick={e => e.stopPropagation()}>
-        <button className={styles.closeBtn} onClick={handleDismiss}>
-          <X size={20} />
-        </button>
-
-        <div className={styles.content}>
-          <div className={styles.iconWrapper}>
-            <img src={logoUrl} alt="Hasharchi Logo" className={styles.logo} />
-          </div>
-          
-          <h2 className={styles.title}>Hasharchi ilovasini o'rnating</h2>
-          <p className={styles.subtitle}>
-            Tezroq kirish, bildirishnomalar va oflayn rejimda ishlash uchun ilovani telefoningizga o'rnatib oling.
-          </p>
-
-          {isIOS ? (
+  if (showIosGuide) {
+    return (
+      <div className={styles.overlay} onClick={handleDismiss}>
+        <div className={styles.modal} onClick={e => e.stopPropagation()}>
+          <button className={styles.closeBtn} onClick={handleDismiss}>
+            <X size={20} />
+          </button>
+          <div className={styles.content}>
+            <div className={styles.iconWrapper}>
+              <img src={logoUrl} alt="Hasharchi Logo" className={styles.logo} />
+            </div>
+            <h2 className={styles.title}>O'rnatish bo'yicha qo'llanma</h2>
+            <p className={styles.subtitle}>iOS tizimida ilovani o'rnatish uchun quyidagi qadamlarni bajaring:</p>
             <div className={styles.iosInstructions}>
               <div className={styles.instructionRow}>
                 <div className={styles.iconBox}>
@@ -102,17 +103,31 @@ export const PWAInstallModal = () => {
                 <span>2. "Asosiy ekranga qo'shish" (Add to Home Screen) ni tanlang.</span>
               </div>
             </div>
-          ) : (
-            <Button 
-              variant="primary" 
-              size="large" 
-              fullWidth 
-              onClick={handleInstall}
-            >
-              <Download size={20} /> O'rnatib olish
-            </Button>
-          )}
+          </div>
         </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.bannerWrapper}>
+      <div className={styles.banner}>
+        <div className={styles.bannerIconBox}>
+          <img src={logoUrl} alt="Hasharchi" className={styles.bannerLogo} />
+        </div>
+        
+        <div className={styles.bannerTextGroup}>
+          <div className={styles.bannerTitle}>HASHARCHI</div>
+          <div className={styles.bannerSubtitle}>Ekranga qo'shib oling</div>
+        </div>
+        
+        <button className={styles.bannerInstallBtn} onClick={handleInstallClick}>
+          O'rnatish
+        </button>
+
+        <button className={styles.bannerCloseBtn} onClick={handleDismiss}>
+          <X size={18} />
+        </button>
       </div>
     </div>
   );
