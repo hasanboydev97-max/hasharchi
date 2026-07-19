@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import heroImage from '../../assets/xush kelibsiz.webp';
 import { Button } from '../../components/Button/Button';
 import { ProgressiveImage } from '../../components/ProgressiveImage/ProgressiveImage';
+import { useAuth } from '../../context/AuthContext';
 import styles from './Auth.module.css';
 
 export const Welcome: React.FC = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   return (
     <div className={styles.pageGradient}>

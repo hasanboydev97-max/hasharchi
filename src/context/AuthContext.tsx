@@ -3,19 +3,19 @@ import type { ReactNode } from 'react';
 
 interface AuthContextType {
   isLoggedIn: boolean;
-  role: 'usta' | 'mijoz' | null;
-  login: (role: 'usta' | 'mijoz') => void;
+  role: 'usta' | 'mijoz' | 'admin' | null;
+  login: (role: 'usta' | 'mijoz' | 'admin') => void;
   logout: () => void;
-  setRole: (role: 'usta' | 'mijoz') => void;
+  setRole: (role: 'usta' | 'mijoz' | 'admin') => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [role, setRoleState] = useState<'usta' | 'mijoz' | null>(null);
+  const [role, setRoleState] = useState<'usta' | 'mijoz' | 'admin' | null>(null);
 
-  const login = (selectedRole: 'usta' | 'mijoz') => {
+  const login = (selectedRole: 'usta' | 'mijoz' | 'admin') => {
     setRoleState(selectedRole);
     setIsLoggedIn(true);
   };
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setRoleState(null);
   };
 
-  const setRole = (selectedRole: 'usta' | 'mijoz') => {
+  const setRole = (selectedRole: 'usta' | 'mijoz' | 'admin') => {
     setRoleState(selectedRole);
   };
 

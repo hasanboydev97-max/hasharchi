@@ -35,7 +35,23 @@ import { NotificationsPage }  from './pages/Notifications/Notifications';
 import { HelpPage }           from './pages/Help/Help';
 import { PWAInstallModal }    from './components/PWAInstallModal/PWAInstallModal';
 
+import { AdminLayout } from './pages/Admin/AdminLayout/AdminLayout';
+import { AdminDashboard } from './pages/Admin/Dashboard/AdminDashboard';
+import { AdminUsers } from './pages/Admin/Users/AdminUsers';
+
 import { useAuth } from './context/AuthContext';
+import { useEffect } from 'react';
+
+// ─── Secret Admin Login ──────────────────────────────────────────
+function SecretAdminLogin() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  useEffect(() => {
+    login('admin');
+    navigate('/admin', { replace: true });
+  }, [login, navigate]);
+  return null;
+}
 
 // ─── Wrapper ────────────────────────────────────────────────────
 const W = ({ children }: { children: React.ReactNode }) => (
@@ -53,6 +69,9 @@ function App() {
 
         {/* ═══ Splash (hammaga ochiq) ═══ */}
         <Route path="/splash" element={<W><Splash /></W>} />
+        
+        {/* ═══ Maxfiy Admin Kirish yo'li ═══ */}
+        <Route path="/secret-admin" element={<SecretAdminLogin />} />
 
         {/* ═══ Onboarding ═══ */}
         <Route path="/onboarding" element={<W><Onboarding /></W>} />
@@ -67,7 +86,7 @@ function App() {
         <Route path="/auth/setup/mijoz"     element={<W><MijozSetup /></W>} />
 
         {/* ═══ Asosiy (login kerak) ═══ */}
-        {isLoggedIn ? (
+        {isLoggedIn && role !== 'admin' && (
           <>
             {/* Bottom nav bilan sahifalar */}
             <Route path="/"            element={<MobileLayout><Explore /></MobileLayout>} />
@@ -102,10 +121,21 @@ function App() {
             <Route path="/booking/:id" element={<W><BookingDetail /></W>} />
             <Route path="/booking/:id/receipt" element={<W><Receipt /></W>} />
 
-            {/* Boshqa barcha yo'llar → bosh sahifa */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </>
-        ) : (
+        )}
+
+        {/* ═══ Admin CRM ═══ */}
+        {isLoggedIn && role === 'admin' && (
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="*" element={<Navigate to="/admin" replace />} />
+          </Route>
+        )}
+
+        {/* ═══ Login qilinmagan ═══ */}
+        {!isLoggedIn && (
           <>
             {/* Login qilmagan → splash'ga */}
             <Route path="/" element={<Navigate to="/splash" replace />} />
